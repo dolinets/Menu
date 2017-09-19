@@ -71,8 +71,6 @@ $(document).ready(function() {
 
 	}
 
-
-  
 	$(window).resize(function() {		
 			if (  $(window).width() > 768 ) {			
 				$('.menu-1st-level').removeAttr('style');
