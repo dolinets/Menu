@@ -54,26 +54,36 @@ $(document).ready(function () {
 
 /*Работа меню для десктопной версии*/
 	function activateDesktopMenu() {
-		$('.menu-1st-level>li>a').hover (
+		$('.menu-1st-level>li').bind("mouseenter", function()
+			{
+				$(this).children('.menu-2st-container').stop(true).fadeIn(300);
+				console.log('mouseenter1');
+
+				$('.menu-2st-level>li').bind("mouseenter", function()
+					{
+						$(this).children('.menu-3st-container').stop(true).fadeIn(300);
+						console.log('mouseenter2');
+					}
+				);
+
+				$('.menu-2st-level>li').bind("mouseleave", function()
+					{
+						$(this).children('.menu-3st-container').stop(true).fadeOut(300);
+						console.log('mouseleave2');
+					}
+				);
+					}
+				);
+
+		$('.menu-1st-level>li').bind("mouseleave", function()
+			{
+				$(this).children('.menu-2st-container').stop(true).fadeOut(300);
+				console.log('mouseleave1');
+			}
+		);
 			
-			function() {
-				$(this).next().stop(false,true).fadeIn(300);
+	} 
 
-				$('.menu-2st-level>li>a').hover (
-				function() {
-					$(this).next().stop(false,true).fadeIn(300);
-				},
-				function() {
-					$(this).next().stop(false,true).fadeOut(300);
-				});
-			}, 
-
-			function hideMenu() {
-
-				$(this).next().stop(false,true).fadeOut(300);
-			});
-			
-		} 
 
 
 /*Выбор режима меню*/
@@ -103,6 +113,10 @@ $(document).ready(function () {
 			$('.menu-1st-level').unbind();   
 			$('.menu-1st-level>li>a').unbind();
 			$('.menu-2st-level>li>a').unbind();
+			$('.menu-1st-level>li').unbind();
+			$('.menu-2st-level>li').unbind();   
+
+			
 
 		/*Сброс стилей активности*/
 			$('.hr').removeClass('active');

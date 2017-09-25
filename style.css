@@ -3,9 +3,8 @@ body {
 }
 
 .menu-container {
-	width: 100%;
 	position: relative;
-
+	width: 100%;
 }
 
 .menu-2st-container {
@@ -28,9 +27,9 @@ body {
 }
 
 .menu-1st-level {
-	background-color: #5879e4;
 	display: flex;
 	justify-content: space-around;
+	background-color: #5879e4;
 }
 
 .menu-2st-level {
@@ -47,18 +46,18 @@ body {
 
 .menu-3st-level {
 	display: flex;
+	width: 140%;
 	justify-content: flex-start;
 	flex-wrap: wrap;
-	width: 140%;
 }
 
 .links-1st-level {
 	display: block;
+	padding: 12px;
 	text-decoration: none;
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: 500;
-	padding: 12px;
 }
 
 .links-1st-level:hover {
@@ -66,22 +65,30 @@ body {
 }
 
 .links-2st-level {
+	display: block;
+	padding: 10px;
 	text-decoration: none;
 	color: #333333;
 	font-weight: 400;
 	font-size: 85%;
-	display: block;
-	padding: 10px;
+}
+
+.links-2st-level:hover {
+	font-weight: 500;
+	text-decoration: underline;
 }
 
 .links-3st-level {
+	display: block;
+	padding: 10px;
 	text-decoration: none;
 	color: #555555;
 	font-weight: 400;
 	font-size: 80%;
-	padding: 10px;
-	display: block;
+}
 
+.links-3st-level:hover {
+	font-weight: 500;
 }
 
 .links-3st-level:before {
@@ -103,10 +110,10 @@ hr {
 @media screen and (max-width: 768px) {
 	.menu-trigger {
 		display: block;
+		padding: 10px;
 		color: #ffffff;
 		background-color: #5879e4; 
 		text-decoration: none;
-		padding: 10px;
 		text-transform: uppercase;
 		font-weight: 500;
 	}
